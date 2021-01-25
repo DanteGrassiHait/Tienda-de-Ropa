@@ -2,7 +2,7 @@ package clases;
 
 public class Buzo extends Ropa {
 
-	private String tipo;
+	private String tipo; //Canguro, con cierre, etc
 	private Boolean capucha;
 	private Boolean bolsillos;
 	

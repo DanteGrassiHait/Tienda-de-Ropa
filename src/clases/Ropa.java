@@ -2,11 +2,11 @@ package clases;
 
 public abstract class Ropa {
 
-	private String marca;
-	private String modelo;
+	private String marca; 
+	private String modelo; //Nombre del modelo de un producto de una determinada marca.
 	private String color;
 	private String talle;
-	private String genero;
+	private String genero; //Masculino o Femenino.
 	private String paraEdad;
 	
 	public Ropa() {
