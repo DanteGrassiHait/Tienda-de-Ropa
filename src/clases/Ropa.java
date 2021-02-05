@@ -1,6 +1,6 @@
 package clases;
 
-public abstract class Ropa {
+public class Ropa {
 
 	private String marca;
 	private String modelo;
@@ -77,7 +77,7 @@ public abstract class Ropa {
 
 	@Override
 	public String toString() {
-		return "Marca: " + getMarca() + "Modelo: " + getModelo() + "Color: " + getColor() + "Talle: " + getTalle() + "Genero: " + getGenero() + "ParaEdad: " + getParaEdad();
+		return "Marca: " + getMarca() + "\n" + "Modelo: " + getModelo() + "\n" + "Color: " + getColor() + "\n" + "Talle: " + getTalle() + "\n" + "Genero: " + getGenero() + "\n" + "ParaEdad: " + getParaEdad() + "\n";
 	}
 	
 	
