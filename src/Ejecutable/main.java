@@ -1,7 +1,7 @@
 package Ejecutable;
 
 import BaseDeDatos.Conexion;
-import BaseDeDatos.ropaDao;
+import BaseDeDatos.buzoDao;
 import colecciones.Inventario;
 
 public class main {
@@ -12,11 +12,15 @@ public class main {
 		Conexion con = new Conexion();
 		con.conectado();
 		//Creacion de objetos necesarios
-		ropaDao dao = new ropaDao();
+		buzoDao bDao = new buzoDao();
 		Inventario inventario = new Inventario();
 		
-		inventario = dao.GetAll();
+		inventario = bDao.GetAll();
+		//System.out.println(inventario.listar());
+		
+		inventario = bDao.GetBy("talle", "L");
 		System.out.println(inventario.listar());
+		
 
 	}
 
