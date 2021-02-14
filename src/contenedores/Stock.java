@@ -3,6 +3,8 @@ package contenedores;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
+//Contiene toda la ropa en stock
 public class Stock <E>{
 	
 	private ArrayList<E> stock;
@@ -40,5 +42,16 @@ public class Stock <E>{
 			return -1;
 		}
 	}
+	
+	public boolean eliminarObjeto(E o) {
+		boolean eliminado = false;
+		int pos = buscarPosObjeto(o);
+		if(pos != -1) {
+			stock.remove(pos);
+			eliminado = true;
+		}
+		return eliminado;
+	}
+	
 
 }
