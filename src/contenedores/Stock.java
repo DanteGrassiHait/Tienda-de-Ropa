@@ -1,4 +1,4 @@
-package src.contenedores;
+package contenedores;
 
 import java.util.ArrayList;
 import java.util.Iterator;
