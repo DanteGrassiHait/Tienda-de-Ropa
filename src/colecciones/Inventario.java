@@ -2,28 +2,27 @@ package colecciones;
 
 import java.util.ArrayList;
 
-import clases.Ropa;
 
-public class Inventario 
+public class Inventario <E>
 {
-	private ArrayList<Ropa> inventario;
+	private ArrayList<E> inventario;
 	
 	public Inventario()
 	{
-		this.inventario = new ArrayList<Ropa>();
+		this.inventario = new ArrayList<E>();
 	}
 
-	public ArrayList<Ropa> getInventario()
+	public ArrayList<E> getInventario()
 	{
 		return inventario;
 	}
 
-	public void setInventario(ArrayList<Ropa> inventario)
+	public void setInventario(ArrayList<E> inventario)
 	{
 		this.inventario = inventario;
 	}
 	
-	public void add(Ropa ropa)
+	public void add(E ropa)
 	{
 		this.inventario.add(ropa);
 	}
@@ -40,7 +39,7 @@ public class Inventario
 		}
 	}
 	
-	public boolean eliminar(Ropa ropa)
+	public boolean eliminar(E ropa)
 	{
 		if(!isEmpty())
 		{
@@ -55,7 +54,7 @@ public class Inventario
 	public String listar()
 	{
 		StringBuilder sb = new StringBuilder();
-		for(Ropa aux : this.inventario)
+		for(E aux : this.inventario)
 		{
 			sb.append(aux);
 		}
