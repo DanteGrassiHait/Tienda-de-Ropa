@@ -1,4 +1,4 @@
-package Ejecutable;
+package ejecutable;
 
 public class main {
 
