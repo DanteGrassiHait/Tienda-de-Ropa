@@ -53,5 +53,14 @@ public class Stock <E>{
 		return eliminado;
 	}
 	
+	public String listar() {
+		StringBuilder sb = new StringBuilder();
+		for(E e : stock) {
+			sb.append(e);
+		}
+		String retorno = sb.toString();
+		return retorno;
+	}
+	
 
 }
