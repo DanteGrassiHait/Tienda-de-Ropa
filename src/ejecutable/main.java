@@ -1,4 +1,4 @@
-package Ejecutable;
+package ejecutable;
 
 import BaseDeDatos.Conexion;
 import BaseDeDatos.buzoDao;
