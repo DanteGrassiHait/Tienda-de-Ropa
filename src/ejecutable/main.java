@@ -2,7 +2,7 @@ package ejecutable;
 
 import BaseDeDatos.Conexion;
 import BaseDeDatos.buzoDao;
-
+import clases.Buzo;
 import colecciones.Inventario;
 
 public class main {
@@ -11,22 +11,23 @@ public class main {
 	{
 		
 		//Conexion a la base de datos
-		//Conexion con = new Conexion();
-		//con.conectado();
+		Conexion con = new Conexion();
+		con.conectado();
 		//Creacion de objetos necesarios
-		//buzoDao bDao = new buzoDao();
-		//Inventario inventario = new Inventario();
+		buzoDao bDao = new buzoDao();
+		Inventario <Buzo> inventario = new Inventario<Buzo>();
 		
-		//inventario = bDao.GetAll();
+		inventario = bDao.GetAll();
 		//System.out.println(inventario.listar());
 		
-		//inventario = bDao.GetBy("talle", "L");
+		inventario = bDao.GetBy("talle", "L");
 		//System.out.println(inventario.listar());
 		
+		bDao.Add("Rebook", "Fire", "Negro", "XS", "Femenino", "Adulto", "Con Cierre", false, true);
 		//con.desconectar();
 		
-		Menu menu = new Menu();
-		menu.menuAdmin();
+		//Menu menu = new Menu();
+		//menu.menuAdmin();
 		
 	}
 
