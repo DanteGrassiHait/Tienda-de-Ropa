@@ -77,11 +77,8 @@ public class buzoDao implements MetodoBBDD <Buzo>
 	
 	public void Add(String marca, String modelo, String color, String talle, String genero, String paraEdad, String tipo, Boolean capucha, Boolean bolsillos) // En "aBuscar" se le pasa el atributo de la ropa a buscar y en "tipo" el contenido de dicho atributo. Ej: "Marca", "Adidas"
 	{
-    	String consulta = "CALL Buzo_Add (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-    	Inventario <Buzo> inventario = new Inventario <Buzo> ();
-    	Buzo buzo = null;
+    	String consulta = "CALL Buzo_Add (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     	Connection conexion;
-    	ResultSet rs;
     	try
 		{
     		conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda_de_ropa", "root", "");
@@ -95,7 +92,7 @@ public class buzoDao implements MetodoBBDD <Buzo>
     		sentencia.setString(7, tipo);
     		sentencia.setBoolean(8, capucha);
     		sentencia.setBoolean(9, bolsillos);
-    		rs = sentencia.executeQuery();		
+    		sentencia.executeQuery();		
 		}
     	catch(SQLTimeoutException e)
     	{
