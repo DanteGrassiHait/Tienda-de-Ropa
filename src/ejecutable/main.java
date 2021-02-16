@@ -1,13 +1,15 @@
 package ejecutable;
 
-import BaseDeDatos.Conexion;
-import BaseDeDatos.buzoDao;
-import colecciones.Inventario;
+//import BaseDeDatos.Conexion;
+//import BaseDeDatos.buzoDao;
+
+//import colecciones.Inventario;
 
 public class main {
 
 	public static void main(String[] args) 
 	{
+		/*
 		//Conexion a la base de datos
 		Conexion con = new Conexion();
 		con.conectado();
@@ -19,9 +21,11 @@ public class main {
 		//System.out.println(inventario.listar());
 		
 		inventario = bDao.GetBy("talle", "L");
-		System.out.println(inventario.listar());
+		//System.out.println(inventario.listar());
+		*/
+		Menu menu = new Menu();
+		menu.menuAdmin();
 		
-
 	}
 
 }
