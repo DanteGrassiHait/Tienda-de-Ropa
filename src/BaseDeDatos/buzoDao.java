@@ -2,14 +2,16 @@ package BaseDeDatos;
 
 import colecciones.Inventario;
 import java.sql.*;
+import Interaces.MetodoBBDD;
 import clases.Buzo;
 
-public class buzoDao 
+public class buzoDao implements MetodoBBDD <Buzo>
 {
-	public Inventario GetAll()
+	@Override
+	public Inventario <Buzo> GetAll()
 	{
     	String consulta = "CALL Buzo_GetAll";
-    	Inventario inventario = new Inventario();
+    	Inventario <Buzo> inventario = new Inventario <Buzo> ();
     	Buzo buzo = null;
     	Connection conexion;
     	Statement st;
@@ -39,10 +41,11 @@ public class buzoDao
     	return inventario;
 	}
 	
-	public Inventario GetBy(String aBuscar, String tipo) // En "aBuscar" se le pasa el atributo de la ropa a buscar y en "tipo" el contenido de dicho atributo. Ej: "Marca", "Adidas"
+	@Override
+	public Inventario <Buzo> GetBy(String aBuscar, String tipo) // En "aBuscar" se le pasa el atributo de la ropa a buscar y en "tipo" el contenido de dicho atributo. Ej: "Marca", "Adidas"
 	{
     	String consulta = "CALL Buzo_GetBy" + aBuscar + " (?)";
-    	Inventario inventario = new Inventario();
+    	Inventario <Buzo> inventario = new Inventario <Buzo> ();
     	Buzo buzo = null;
     	Connection conexion;
     	ResultSet rs;
@@ -70,5 +73,41 @@ public class buzoDao
     		e.printStackTrace();
 		}
     	return inventario;
+	}
+	
+	public void Add(String marca, String modelo, String color, String talle, String genero, String paraEdad, String tipo, Boolean capucha, Boolean bolsillos) // En "aBuscar" se le pasa el atributo de la ropa a buscar y en "tipo" el contenido de dicho atributo. Ej: "Marca", "Adidas"
+	{
+    	String consulta = "CALL Buzo_Add (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    	Inventario <Buzo> inventario = new Inventario <Buzo> ();
+    	Buzo buzo = null;
+    	Connection conexion;
+    	ResultSet rs;
+    	try
+		{
+    		conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda_de_ropa", "root", "");
+    		PreparedStatement sentencia= conexion.prepareStatement(consulta);
+    		sentencia.setString(1, marca);
+    		sentencia.setString(2, modelo);
+    		sentencia.setString(3, color);
+    		sentencia.setString(4, talle);
+    		sentencia.setString(5, genero);
+    		sentencia.setString(6, paraEdad);
+    		sentencia.setString(7, tipo);
+    		sentencia.setBoolean(8, capucha);
+    		sentencia.setBoolean(9, bolsillos);
+    		rs = sentencia.executeQuery();		
+		}
+    	catch(SQLTimeoutException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	catch (Exception e)
+		{
+    		e.printStackTrace();
+		}
 	}
 }
