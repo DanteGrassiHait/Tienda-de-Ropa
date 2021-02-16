@@ -18,11 +18,11 @@ public class Conexion
          }
             catch(SQLException e)        //Agarramos excepciones de tipo SQL
             {
-            System.out.println(e);          //las mostramos en consola
+            	e.printStackTrace();          //las mostramos en consola
             }
             catch(ClassNotFoundException e)       //agarramos excepciones de tipo clase en java
             {
-             System.out.println(e);               //las mostramos en consola
+            	e.printStackTrace();              //las mostramos en consola
             }
        }
     
