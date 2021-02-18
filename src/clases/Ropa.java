@@ -9,7 +9,7 @@ public abstract class Ropa {
 	private String genero;
 	private String paraEdad;
 	
-	public Ropa() {
+	protected Ropa() {
 		this.marca = "";
 		this.modelo = "";
 		this.color = "";
@@ -18,7 +18,7 @@ public abstract class Ropa {
 		this.paraEdad = "";
 	}
 	
-	public Ropa(String marca, String modelo, String color, String talle, String genero, String paraEdad) {
+	protected Ropa(String marca, String modelo, String color, String talle, String genero, String paraEdad) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.color = color;

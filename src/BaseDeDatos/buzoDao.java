@@ -2,23 +2,29 @@ package BaseDeDatos;
 
 import colecciones.Inventario;
 import java.sql.*;
+import java.util.Properties;
+
 import Interaces.MetodoBBDD;
 import clases.Buzo;
 
 public class buzoDao implements MetodoBBDD <Buzo>
 {
+	private static final String URL = "jdbc:mysql://localhost/tienda_de_ropa";
 	@Override
 	public Inventario <Buzo> GetAll()
 	{
     	String consulta = "CALL Buzo_GetAll";
-    	Inventario <Buzo> inventario = new Inventario <Buzo> ();
+    	Inventario <Buzo> inventario = new Inventario <> ();
     	Buzo buzo = null;
     	Connection conexion;
     	Statement st;
     	ResultSet rs;
     	try
 		{
-    		conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda_de_ropa", "root", "");
+    		Properties props = new Properties();
+    		props.setProperty("user", "root");
+    		props.setProperty("password", "");
+    		conexion = DriverManager.getConnection(URL, props);
 			st = conexion.createStatement();
 			rs = st.executeQuery(consulta);
 			while(rs.next())
@@ -51,7 +57,10 @@ public class buzoDao implements MetodoBBDD <Buzo>
     	ResultSet rs;
     	try
 		{
-    		conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda_de_ropa", "root", "");
+    		Properties props = new Properties();
+    		props.setProperty("user", "root");
+    		props.setProperty("password", "");
+    		conexion = DriverManager.getConnection(URL, props);
     		PreparedStatement sentencia= conexion.prepareStatement(consulta);
     		sentencia.setString(1, tipo);
     		rs = sentencia.executeQuery();
@@ -81,7 +90,10 @@ public class buzoDao implements MetodoBBDD <Buzo>
     	Connection conexion;
     	try
 		{
-    		conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda_de_ropa", "root", "");
+    		Properties props = new Properties();
+    		props.setProperty("user", "root");
+    		props.setProperty("password", "");
+    		conexion = DriverManager.getConnection(URL, props);
     		PreparedStatement sentencia= conexion.prepareStatement(consulta);
     		sentencia.setString(1, marca);
     		sentencia.setString(2, modelo);
