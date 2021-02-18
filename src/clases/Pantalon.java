@@ -1,52 +1,62 @@
 package clases;
 
-public class Pantalon extends Ropa{
+public class Pantalon extends Ropa
+{
 
 	private String tipo;
 	private Boolean impermeable;
 	private String corte; // Ejemplo: clasico, chino, skinny
 
-	public Pantalon() {
+	public Pantalon() 
+	{
 		super();
 		this.tipo = "";
 		this.impermeable = false;
 		this.corte = "";
 	}
 
-	public Pantalon(String marca, String modelo, String color, String talle, String genero, String paraEdad, String tipo, Boolean impermeable, String corte) {
+	public Pantalon(String marca, String modelo, String color, String talle, String genero, String paraEdad, String tipo, Boolean impermeable, String corte) 
+	{
 		super(marca, modelo, color, talle, genero, paraEdad);
 		this.tipo = tipo;
 		this.impermeable = impermeable;
 		this.corte = corte;
 	}
 
-	public String getTipo() {
+	public String getTipo() 
+	{
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(String tipo) 
+	{
 		this.tipo = tipo;
 	}
 
-	public Boolean getImpermeable() {
+	public Boolean getImpermeable() 
+	{
 		return impermeable;
 	}
 
-	public void setImpermeable(Boolean impermeable) {
+	public void setImpermeable(Boolean impermeable) 
+	{
 		this.impermeable = impermeable;
 	}
 
-	public String getCorte() {
+	public String getCorte() 
+	{
 		return corte;
 	}
 
-	public void setCorte(String corte) {
+	public void setCorte(String corte) 
+	{
 		this.corte = corte;
 	}
 
 	@Override
-	public String toString() {
-		return "Tipo: " + getTipo() + "Impermeable: " + getImpermeable() + "Corte: " + getCorte();
+	public String toString() 
+	{
+		return super.toString() + "Tipo: " + getTipo() + "\n" + "Impermeable: " + getImpermeable() + "\n" + "Corte: " + getCorte() + "\n";
 	}
 	
 	
