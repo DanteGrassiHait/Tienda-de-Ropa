@@ -46,7 +46,7 @@ public class Buzo extends Ropa {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Tipo: " + getTipo() + "\n" + "Capucha: " + getCapucha() + "\n" + "Bolsillos: " + getBolsillos() + "\n";
+		return super.toString() + "Tipo: " + getTipo() + "\n" + "Capucha: " + getCapucha() + "\n" + "Bolsillos: " + getBolsillos() + "\n\n";
 	}
 	
 	
